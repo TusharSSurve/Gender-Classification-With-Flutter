@@ -13,9 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: Home(),
       debugShowCheckedModeBanner: false,
     );
@@ -65,7 +62,7 @@ class _HomeState extends State<Home> {
         imageMean: 0.0,
         imageStd: 255.0,
         threshold: 0.5);
-
+    print(output);
     setState(() {
       _isLoading = false;
       _output = output;
@@ -76,7 +73,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gender Classification'),
+        backgroundColor: Colors.white,
+        title: Text(
+          'Gender Classification',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: _isLoading
           ? Container(
@@ -95,6 +96,7 @@ class _HomeState extends State<Home> {
               ),
             ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         child: Icon(
           Icons.camera,
           size: 40,
